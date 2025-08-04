@@ -1,2 +1,49 @@
-# LyricFlow
-LyricFlow is a lightweight local lyric display system that mimics the synced scrolling lyrics seen in apps like Spotify or Apple Music. It supports keyboard control, lyric-image pairing, and offline use — ideal for outdoor concerts, worship events, or live performances.
+## 🌐 Project Introduction
+
+**LyricFlow** is a lightweight, offline-first lyric display system inspired by the scrolling style of Spotify and Apple Music.  
+It is ideal for outdoor performances, church worship, band practice, or any live setting without internet access.
+
+### ✨ Features
+
+- 🎤 Line-by-line synced lyric display
+- 🖼️ Per-song image support (left-side layout)
+- 🖥️ Fully offline — no internet required
+- ⌨️ Keyboard control for scrolling, font resizing, and song switching
+- 📁 Simple file structure: lyrics and images managed separately
+
+### 📁 File Structure
+LyricFlow/
+├── index.html # Main file to run
+├── LICENSE # License document
+├── README.md # Project info
+├── images/ # Image files (.png)
+│ └── SongName.png
+
+
+### 🚀 How to Use
+
+1. Download and unzip the project;
+2. Open `index.html` with any browser;
+3. Use the bottom-right menu to select a song;
+4. Lyrics and image will sync and display automatically.
+
+### ⌨️ Keyboard Shortcuts
+
+| Key | Action |
+|-----|--------|
+| ↑ / ↓ | Scroll up/down two lines |
+| ← / → | Previous / next song |
+| Space | Jump to next lyric |
+| Z / X | Decrease / increase font size |
+
+### 📄 License
+
+This project is licensed under the **Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0)**.
+
+- ✅ You may copy, remix, and share freely;
+- ❌ Commercial use is **not allowed** without permission;
+- ✅ Derivatives must use the same license;
+- ✅ Credit must be given to the original author: `NA1YO95`.
+
+Full license:  
+https://creativecommons.org/licenses/by-nc-sa/4.0/
