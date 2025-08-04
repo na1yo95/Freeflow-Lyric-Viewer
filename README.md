@@ -1,4 +1,4 @@
-<img width="1920" height="916" alt="image" src="https://github.com/user-attachments/assets/fe2f395f-f164-4784-b9b8-0d803f2ca4aa" />## 🌐 Project Introduction
+## 🌐 Project Introduction
 
 **Freeflow-Lyric-Viewer** is a lightweight, offline-first lyric display system inspired by the scrolling style of Spotify and Apple Music.  
 It is ideal for outdoor performances, church worship, band practice, or any live setting without internet access.
