@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LyricFLow</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+      font-family: sans-serif;
+      background-color: black;
+      color: white;
+	  --font-size: 76px;
+    }
+    #image-container {
+      width: 33.3%;
+      display: flex;
+      align-items: center;
+	  margin-left: 200px; 
+      justify-content: center;
+      background-color: black;
+    }
+    #image-container img {
+      max-width: 100%;
+      height: auto;
+    }
+    #lyrics-container {
+      width: 66.6%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      padding: 20px;
+      position: relative;
+    }
+    .line {
+      opacity: 0.3;
+      font-size: var(--font-size, 76px);
+      transition: opacity 0.3s;
+      margin: 10px 0;
+      text-align: center;
+      max-width: 100%;
+    }
+    .visible {
+      opacity: 1;
+      font-weight: bold;
+    }
+    #controls {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      display: flex;
+      gap: 5px;
+      background: rgba(0, 0, 0, 0.1);
+      padding: 5px;
+	  opacity: 0.2;
+	  transition: opacity 0.3s ease;
+      border-radius: 5px;
+    }
+    button, select {
+      font-size: 14px;
+    }
+	#controls:hover {
+	opacity: 1;
+	}
+  </style>
+</head>
+<body>
+  <div id="image-container">
+    <img id="song-image" src="" alt="" />
+  </div>
+  <div id="lyrics-container">
+    <div id="lyrics"></div>
+    <div id="controls">
+      <select id="song-selector"></select>
+      <button onclick="changeFontSize(2)">A+</button>
+      <button onclick="changeFontSize(-2)">A−</button>
+    </div>
+  </div>
+  <script>
+    const allLyrics = {
+      "Wake": `At break of day, in hope we rise.
+We speak Your Name, we lift our eyes.
+Tune our hearts into Your beat.
+Where we walk, there You'll be.`,
+    };
+
+    const lyricsContainer = document.getElementById("lyrics");
+    const songSelector = document.getElementById("song-selector");
+    const image = document.getElementById("song-image");
+    let currentSong = "Wake";
+    let currentIndex = 0;
+    let lines = [];
+
+    Object.keys(allLyrics).forEach(key => {
+      const option = document.createElement("option");
+      option.value = key;
+      option.textContent = key;
+      songSelector.appendChild(option);
+    });
+
+    songSelector.addEventListener("change", () => {
+      currentSong = songSelector.value;
+      currentIndex = 0;
+      loadSong(currentSong);
+    });
+
+    function loadSong(song) {
+      lines = allLyrics[song].split("\n").filter(line => line.trim() !== "");
+      updateLyrics();
+      image.src = `images/${song}.png`;
+    }
+
+    function updateLyrics() {
+      lyricsContainer.innerHTML = "";
+      for (let i = currentIndex - 2; i <= currentIndex + 4; i++) {
+        if (i >= 0 && i < lines.length) {
+          const lineDiv = document.createElement("div");
+          lineDiv.className = "line";
+          lineDiv.textContent = lines[i];
+          if (i === currentIndex || i === currentIndex + 1) {
+            lineDiv.classList.add("visible");
+          }
+          lyricsContainer.appendChild(lineDiv);
+        }
+      }
+    }
+
+    function changeFontSize(delta) {
+      const current = parseInt(getComputedStyle(document.body).getPropertyValue('--font-size') || 36);
+      document.body.style.setProperty('--font-size', `${current + delta}px`);
+    }
+
+    function scrollLyrics(step) {
+      if (currentIndex + step >= 0 && currentIndex + step + 1 < lines.length) {
+        currentIndex += step;
+        updateLyrics();
+      }
+    }
+
+    document.addEventListener("keydown", e => {
+	if (e.key === "ArrowDown") {
+	scrollLyrics(2);
+	} else if (e.key === "ArrowUp") {
+		scrollLyrics(-2);
+	} else if (e.key === " ") {
+		e.preventDefault();
+		scrollLyrics(2);
+	} else if (e.key === "ArrowRight") {
+    // next song
+		const keys = Object.keys(allLyrics);
+		const currentIdx = keys.indexOf(currentSong);
+		if (currentIdx < keys.length - 1) {
+			currentSong = keys[currentIdx + 1];
+			songSelector.value = currentSong;
+			currentIndex = 0;
+			loadSong(currentSong);
+    }
+	} else if (e.key === "ArrowLeft") {
+    // previous song
+		const keys = Object.keys(allLyrics);
+		const currentIdx = keys.indexOf(currentSong);
+		if (currentIdx > 0) {
+			currentSong = keys[currentIdx - 1];
+			songSelector.value = currentSong;
+			currentIndex = 0;
+			loadSong(currentSong);
+    }
+	} else if (e.key.toLowerCase() === "x") {
+    // smaller font
+    changeFontSize(-2);
+  } else if (e.key.toLowerCase() === "z") {
+    // larger font
+    changeFontSize(2);
+  }	
+});
+
+
+    document.addEventListener("wheel", e => {
+      if (e.deltaY > 0) scrollLyrics(2);
+      else scrollLyrics(-2);
+    });
+
+    loadSong(currentSong);
+  </script>
+</body>
+</html>
