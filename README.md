@@ -1,6 +1,6 @@
 ## 🌐 Project Introduction
 
-**LyricFlow** is a lightweight, offline-first lyric display system inspired by the scrolling style of Spotify and Apple Music.  
+**Freeflow-Lyric-Viewer** is a lightweight, offline-first lyric display system inspired by the scrolling style of Spotify and Apple Music.  
 It is ideal for outdoor performances, church worship, band practice, or any live setting without internet access.
 
 ### ✨ Features
@@ -12,7 +12,7 @@ It is ideal for outdoor performances, church worship, band practice, or any live
 - 📁 Simple file structure: lyrics and images managed separately
 
 ### 📁 File Structure
-LyricFlow/
+Freeflow-Lyric-Viewer/
 ├── index.html # Main file to run
 ├── LICENSE # License document
 ├── README.md # Project info
