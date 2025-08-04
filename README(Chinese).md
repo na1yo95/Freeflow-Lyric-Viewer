@@ -14,7 +14,8 @@ Freeflow-Lyric-Viewer 是一个轻量级、可本地运行的歌词同步展示�
 - 🖥️ 全程脱机运行，无需网络
 - 📁 歌词与图片分文件夹管理，易于维护
 
----
+<img width="1920" height="916" alt="image" src="https://github.com/user-attachments/assets/6256d1fa-989d-47e0-826d-5aec8a52032c" />
+
 
 ## 📂 文件结构 
 
@@ -72,5 +73,6 @@ Freeflow-Lyric-Viewer/
 ---
 
 欢迎为 LyricFlow 贡献内容或建议！🎶
+
 
 
