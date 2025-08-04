@@ -3,12 +3,10 @@
 LyricFlow 是一个轻量级、可本地运行的歌词同步展示工具，模仿 Spotify 和 Apple Music 的歌词滚动效果。  
 它特别适合用于户外音乐会、敬拜活动、排练演出或其他无需联网的场景。
 
-LyricFlow is a lightweight, fully offline lyric display system that mimics synced lyric behavior seen in Spotify or Apple Music.  
-It is ideal for outdoor concerts, worship gatherings, rehearsals, or any live performance without internet access.
 
 ---
 
-## ✨ 功能 Features
+## ✨ 功能 
 
 - 🎤 歌词逐句滚动显示（同步效果）
 - 🖼️ 每首歌配有对应图片，自动匹配显示
@@ -18,7 +16,7 @@ It is ideal for outdoor concerts, worship gatherings, rehearsals, or any live pe
 
 ---
 
-## 📂 文件结构 Project Structure
+## 📂 文件结构 
 
 LyricFlow/
 ├── index.html # 主运行文件
@@ -30,7 +28,7 @@ LyricFlow/
 
 ---
 
-## 🚀 使用方法 How to Use
+## 🚀 使用方法 
 
 1. 将项目文件放在本地任意文件夹中；
 2. 打开 `index.html` 文件（双击或浏览器打开）；
@@ -39,7 +37,7 @@ LyricFlow/
 
 ---
 
-## ⌨️ 快捷键 Keyboard Shortcuts
+## ⌨️ 快捷键 
 
 | 键 | 功能 |
 |----|------|
@@ -50,7 +48,7 @@ LyricFlow/
 
 ---
 
-## ⚠️ 注意 Notes
+## ⚠️ 注意 
 
 - `lyrics/` 与 `images/` 文件夹中的文件名必须与歌曲名称完全一致（不含扩展名）。
 - 图片建议尺寸为 `185×240`，系统将自动缩放并居中于左侧屏幕区域。
@@ -58,7 +56,7 @@ LyricFlow/
 
 ---
 
-## 📄 授权 License
+## 📄 授权 
 
 本项目采用 **CC BY-NC-SA 4.0** 授权协议：
 
@@ -74,3 +72,4 @@ LyricFlow/
 ---
 
 欢迎为 LyricFlow 贡献内容或建议！🎶
+
