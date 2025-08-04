@@ -1,6 +1,6 @@
-# 🎵 LyricFlow
+# 🎵 Freeflow-Lyric-Viewer
 
-LyricFlow 是一个轻量级、可本地运行的歌词同步展示工具，模仿 Spotify 和 Apple Music 的歌词滚动效果。  
+Freeflow-Lyric-Viewer 是一个轻量级、可本地运行的歌词同步展示工具，模仿 Spotify 和 Apple Music 的歌词滚动效果。  
 它特别适合用于户外音乐会、敬拜活动、排练演出或其他无需联网的场景。
 
 
@@ -18,7 +18,7 @@ LyricFlow 是一个轻量级、可本地运行的歌词同步展示工具，模�
 
 ## 📂 文件结构 
 
-LyricFlow/
+Freeflow-Lyric-Viewer/
 ├── index.html # 主运行文件
 ├── LICENSE # 授权协议
 ├── README.md # 项目说明
@@ -72,4 +72,5 @@ LyricFlow/
 ---
 
 欢迎为 LyricFlow 贡献内容或建议！🎶
+
 
